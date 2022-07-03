@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 /**
+ * main - entry point
  *
  * Description: Print all possible different combinations of two digits
  * Return: 0
