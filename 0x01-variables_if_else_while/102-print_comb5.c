@@ -19,11 +19,13 @@ int main(void)
 		{
 			for (y2 = ((x1 == y1) ? (x2 + 1) : 0); y2 < 10; ++y2)
 			{
-				putchar('0' + x1);
-				putchar('0' + x2);
-				putchar(' ');
-				putchar('0' + y1);
-				putchar('0' + y2);
+				for (y2 = ((x1 == y1) ? (x2 + 1) : 0); y2 < 10; ++y2)
+				{
+					putchar('0' + x1);
+					putchar('0' + x2);
+					putchar(' ');
+					putchar('0' + y1);
+					putchar('0' + y2);
 
 				if (x1 != 9 || x2 != 8 ||
 						y1 != 9 || y2 != 9)
@@ -31,10 +33,12 @@ int main(void)
 					putchar(',');
 					putchar(' ');
 				}
+				}
 			}
 		}
 	}
-}
 
-putchar('\n');
+	putchar('\n');
+
+	return (0);
 }
