@@ -1,10 +1,10 @@
 #include <stdio.h>
-
+#include <stdlib.h>
+#include <time.h>
 /**
  * main - entry point
  *
- * Description: Print all possible combinations of single-digit numbers
- * Return: 0
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
@@ -12,7 +12,7 @@ int main(void)
 
 	for (i = 0; i < 10; ++i)
 	{
-		putch'0' + i);
+		putchar('0' + i);
 
 		if (i != 9)
 		{
