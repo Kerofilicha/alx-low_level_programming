@@ -2,8 +2,8 @@
 
 /**
  * swap_int - main
- * @a: pointer 
- * @b: pointer 
+ * @a: pointer
+ * @b: pointer
  * Return; 0
  */
 
