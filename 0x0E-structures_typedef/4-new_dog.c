@@ -1,90 +1,51 @@
 #include <stdio.h>
 #include "dog.h"
 #include <stdlib.h>
-
 /**
- * _strlen - swaps integers with pointers.
- * @s: is a pointer to a char
- *
- * Return: nothing.
- **/
-int _strlen(char *s)
-{
-	int i;
-	for (i = 0; *s != '\0'; s++)
-	{
-		i++;
-	}
-	return (i);
-}
-
-/**
- * _strncpy - Swaps integers wih pointers.
- *
- * @dest: is a pointer to a char.
- *
- * @src: is a pointer to a char.
- *
- * @n: is a pointer to an int.
- *
- * Return: Always 0.
+ * *new_dog - create the struct dog.
+ * @name: name is dog.
+ * @age: type float age of dog.
+ * @owner: name of owner.
+ * Return: pointer the new struct dog
  */
-
-char *_strncpy(char *dest, char *src, int n)
-{
-	int i;
-
-	for (i = 0; i < n && src[i] != '\0'; i++)
-		dest[i] = src[i];
-
-	for (i = i; i < n; i++)
-		dest[i] = '\0';
-
-	return (dest);
-}
-
-/**
- * new_dog - Creates function with copy of name and owner
- *
- * @name: name parameter
- * @age: age parameter
- * @owner: owner parameter
- *
- * Return: nothing.
- **/
-
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t *newDog;
-	char *newName;
-	char *newOwner;
-	int size = 4;
+	int a;
+	int b = 0, c = 0;
+	dog_t *p;
 
-	newDog = (dog_t *)malloc(sizeof(struct dog) * size);
-	if (newDog == NULL)
+	p = malloc(sizeof(dog_t));
+	if (p == NULL)
+		return (NULL);
+	for (a = 0; name[a] != '\0'; a++)
+		;
+	p->name = malloc(sizeof(char) * (a + 1))
+
+		if (p->name == NULL)
+		{
+			free(p);
+			return (NULL);
+		}
+
+	for (c = 0; c <= a; c++)
+		p->name[c] = name[c];
+
+	p->age = age;
+
+	for (b = 0; owner[b] != '\0'; b++)
+		;
+
+	p->owner = malloc(sizeof(char) * (b + 1));
+
+	if (p->owner == NULL)
 	{
-		free(newDog);
+		free(p);
+		free(p->name);
 		return (NULL);
 	}
-	newName = (char *)malloc(sizeof((name) + 1) * size);
-	if (newName == NULL)
-	{
-		free(newDog);
-		return (NULL);
-	}
-	newOwner = (char *)malloc(sizeof((owner) + 1) * size);
-	if (newOwner == NULL)
-	{
-		free(newDog);
-		free(newName);
-		return (NULL);
-	}
-	newName = name;
-	newOwner = owner;
 
-	newDog->name = newName;
-	newDog->owner = newOwner;
-	newDog->age = age;
+	for (c = 0; c <= b; c++)
+		p->owner[c] = owner[c];
 
-	return (newDog);
+	return (p);
 }
