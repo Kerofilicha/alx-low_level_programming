@@ -20,7 +20,7 @@ int sum_them_all(const unsigned int n, ...)
 
 	/* loop throughva_arg(my_nums, int);access all arguments stored in the valist */
 	for (count = 0; count < n; count++)
-		sum += va_arg(my_nums, int);
+		sum += va_arg(my_nums, unsigned int);
 
 	va_end(my_nums);
 	
