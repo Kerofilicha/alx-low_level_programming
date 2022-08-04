@@ -10,7 +10,7 @@ int sum_them_all(const unsigned int n, ...)
 	/* creating va_list to store the variable argument list */
 	va_list my_nums;
 	unsigned int count;
-	int sum = o;
+	int sum = 0;
 
 	if (n == 0)
 		return (0);
