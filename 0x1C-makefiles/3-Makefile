@@ -6,9 +6,9 @@ OBJ = $(SRC:.c=.o)
 all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 clean:
-	$(RM) -f *~ $(NAME)
+	$(RM) *~ $(NAME)
 oclean:
-	$(RM) -f $(OBJ)
+	$(RM) $(OBJ)
 
 fclean: clean oclean
-	re: fclean all
+	re: oclean all
